@@ -8,6 +8,16 @@ const letterEles = document.querySelectorAll(".letter");
 
 lightUpName(0);
 
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+
+    loader.classList.add("loader--hidden");
+
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+    });
+});
+
 function createNameSpans(name) {
     let nameArray = name.split("");
     let htmlString = "";
